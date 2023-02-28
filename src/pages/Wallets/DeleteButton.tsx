@@ -61,7 +61,10 @@ const DeleteButton = ({ id, queryKey }: Props) => {
         <>
             <IconButton
                 colorScheme="red"
-                onClick={onOpen}
+                onClick={(e) => {
+                    e.preventDefault();
+                    onOpen();
+                }}
                 icon={<AiFillDelete size={20} />}
                 aria-label="Remove wallet"
                 variant={"link"}

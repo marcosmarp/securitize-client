@@ -68,7 +68,10 @@ const FavoriteButton = ({ wallet, queryKey }: Props) => {
             color={wallet.favorite ? "yellow.500" : "gray.500"}
             isLoading={isLoading}
             isDisabled={isLoading}
-            onClick={async () => await toggleFavorite()}
+            onClick={async (e) => {
+                e.preventDefault();
+                await toggleFavorite();
+            }}
         />
     );
 };

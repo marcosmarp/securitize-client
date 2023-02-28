@@ -1,14 +1,18 @@
-import { Box, Center } from "@chakra-ui/react";
+import { Box, Center, VStack } from "@chakra-ui/react";
 import { Route, Routes } from "react-router-dom";
-import Home from "./pages/Home/Home";
+import Navbar from "./components/Navbar";
+import Wallets from "./pages/Wallets/Wallets";
 
 function App() {
     return (
-        <Center w="full" h="100vh" bgColor={"gray.200"}>
-            <Routes>
-                <Route path="/" element={<Home />} />
-            </Routes>
-        </Center>
+        <VStack w="full" h="100vh" bgColor={"gray.200"}>
+            <Navbar />
+            <Center flex={1}>
+                <Routes>
+                    <Route path="/" element={<Wallets />} />
+                </Routes>
+            </Center>
+        </VStack>
     );
 }
 

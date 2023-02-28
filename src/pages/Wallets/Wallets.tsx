@@ -13,8 +13,9 @@ import Sort from "./Sort";
 import { useState } from "react";
 import Search from "./Search";
 import { Spinner } from "@chakra-ui/react";
+import MainContainer from "../../components/MainContainer";
 
-const Home = () => {
+const Wallets = () => {
     const [sort, setSort] = useState<"address" | "favorite">("favorite");
     const [search, setSearch] = useState<string>("");
     const queryKey = ["wallets", search, sort];
@@ -26,16 +27,7 @@ const Home = () => {
     } = useWalletsQuery(queryKey, search, sort);
 
     return (
-        <VStack
-            minW={"40vw"}
-            w={"fit-content"}
-            p={5}
-            alignItems="flex-start"
-            spacing={5}
-            bgColor="white"
-            borderWidth={1}
-            borderColor="gray.300"
-        >
+        <MainContainer>
             <HStack
                 w="full"
                 justifyContent={"space-between"}
@@ -87,8 +79,8 @@ const Home = () => {
                         ))}
             </VStack>
             <NewWalletModule queryKey={queryKey} />
-        </VStack>
+        </MainContainer>
     );
 };
 
-export default Home;
+export default Wallets;
