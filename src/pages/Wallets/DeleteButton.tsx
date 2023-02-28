@@ -62,7 +62,7 @@ const DeleteButton = ({ id, queryKey }: Props) => {
             <IconButton
                 colorScheme="red"
                 onClick={(e) => {
-                    e.preventDefault();
+                    e.stopPropagation();
                     onOpen();
                 }}
                 icon={<AiFillDelete size={20} />}

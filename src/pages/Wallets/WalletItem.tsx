@@ -1,9 +1,9 @@
-import { HStack, Icon, Show, Text } from "@chakra-ui/react";
+import { HStack, Icon, Show, Text, useDisclosure } from "@chakra-ui/react";
 import { Wallet } from "../../api/types";
 import { FaEthereum } from "react-icons/fa";
 import DeleteButton from "./DeleteButton";
 import FavoriteButton from "./FavoriteButton";
-import { Link } from "react-router-dom";
+import WalletModal from "./WalletModal";
 
 interface Props {
     wallet: Wallet;
@@ -11,8 +11,10 @@ interface Props {
 }
 
 const WalletItem = ({ wallet, queryKey }: Props) => {
+    const { isOpen, onOpen, onClose } = useDisclosure();
+
     return (
-        <Link style={{ width: "100%" }} to={`/wallets/${wallet.id}`}>
+        <>
             <HStack
                 p={3}
                 w="full"
@@ -24,6 +26,7 @@ const WalletItem = ({ wallet, queryKey }: Props) => {
                 _hover={{
                     borderColor: "gray.300",
                 }}
+                onClick={onOpen}
             >
                 <HStack spacing={3}>
                     <Icon fontSize={"2xl"} color={"#62678F"} as={FaEthereum} />
@@ -47,7 +50,13 @@ const WalletItem = ({ wallet, queryKey }: Props) => {
                     <DeleteButton queryKey={queryKey} id={wallet.id} />
                 </HStack>
             </HStack>
-        </Link>
+
+            <WalletModal
+                walletId={wallet.id}
+                isOpen={isOpen}
+                onClose={onClose}
+            />
+        </>
     );
 };
 
