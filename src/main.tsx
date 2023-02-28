@@ -15,7 +15,7 @@ root.render(
         <ChakraProvider>
             <BrowserRouter>
                 <App />
-                <ReactQueryDevtools />
+                {import.meta.env.DEV && <ReactQueryDevtools />}
             </BrowserRouter>
         </ChakraProvider>
     </QueryClientProvider>

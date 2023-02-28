@@ -50,6 +50,8 @@ const ExchangeRateItem = ({ item }: Props) => {
 
                     return { ...currentQuery, data: updatedExchangeRates };
                 });
+
+                queryClient.resetQueries(["wallets"]);
             },
             onError: () => {
                 toast({

@@ -27,6 +27,7 @@ const WalletItem = ({ wallet, queryKey }: Props) => {
                     borderColor: "gray.300",
                 }}
                 onClick={onOpen}
+                cursor="pointer"
             >
                 <HStack spacing={3}>
                     <Icon fontSize={"2xl"} color={"#62678F"} as={FaEthereum} />

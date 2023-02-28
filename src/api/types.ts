@@ -11,6 +11,10 @@ export interface AuditableEntity {
 export interface Wallet extends AuditableEntity {
     address: string;
     favorite: boolean;
+    balance: number;
+    isOld: boolean;
+    balanceInUsd: number;
+    balanceInEur: number;
 }
 
 export interface ExchangeRate extends AuditableEntity {
