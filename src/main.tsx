@@ -2,6 +2,7 @@ import { createRoot } from "react-dom/client";
 import { ChakraProvider } from "@chakra-ui/react";
 import { BrowserRouter } from "react-router-dom";
 import { QueryClient, QueryClientProvider } from "react-query";
+import { ReactQueryDevtools } from "react-query/devtools";
 import App from "./App";
 
 const container = document.getElementById("root");
@@ -14,6 +15,7 @@ root.render(
         <ChakraProvider>
             <BrowserRouter>
                 <App />
+                <ReactQueryDevtools />
             </BrowserRouter>
         </ChakraProvider>
     </QueryClientProvider>
