@@ -9,6 +9,7 @@ const MainContainer = ({ children }: Props) => {
         <VStack
             minW={"40vw"}
             w={"fit-content"}
+            maxW="full"
             p={5}
             alignItems="flex-start"
             spacing={5}

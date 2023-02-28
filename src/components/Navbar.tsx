@@ -22,9 +22,10 @@ const Navbar = () => {
         <HStack
             w="full"
             h={"8vh"}
-            px={5}
+            px={{ base: 1, md: 5 }}
             bgColor="gray.800"
             justifyContent={"space-evenly"}
+            spacing={5}
         >
             <Link
                 style={{

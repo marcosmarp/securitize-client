@@ -5,6 +5,7 @@ import {
     Heading,
     Text,
     Divider,
+    Flex,
 } from "@chakra-ui/react";
 import { useWalletsQuery } from "../../hooks/useWalletsQuery";
 import WalletItem from "./WalletItem";
@@ -28,17 +29,19 @@ const Wallets = () => {
 
     return (
         <MainContainer>
-            <HStack
+            <Flex
                 w="full"
                 justifyContent={"space-between"}
-                alignItems="flex-end"
+                alignItems={{ base: "flex-start", md: "flex-end" }}
+                flexDir={{ base: "column", md: "row" }}
+                gap={5}
             >
                 <Heading fontSize={"2xl"}>Wallets</Heading>
                 <HStack spacing={3}>
                     <Search search={search} setSearch={setSearch} />
                     <Sort sort={sort} setSort={setSort} />
                 </HStack>
-            </HStack>
+            </Flex>
             <Divider />
             <VStack w="full" alignItems={"flex-start"} spacing={3}>
                 {isLoading && (

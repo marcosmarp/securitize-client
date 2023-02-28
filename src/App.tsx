@@ -8,7 +8,7 @@ function App() {
     return (
         <VStack w="full" h="100vh" bgColor={"gray.200"}>
             <Navbar />
-            <Center flex={1}>
+            <Center flex={1} p={2}>
                 <Routes>
                     <Route path="/" element={<Wallets />} />
                     <Route path="/rates" element={<ExchangeRates />} />

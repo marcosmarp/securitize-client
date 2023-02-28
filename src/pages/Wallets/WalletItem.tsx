@@ -1,4 +1,4 @@
-import { HStack, Icon, Text } from "@chakra-ui/react";
+import { HStack, Icon, Show, Text } from "@chakra-ui/react";
 import { Wallet } from "../../api/types";
 import { FaEthereum } from "react-icons/fa";
 import DeleteButton from "./DeleteButton";
@@ -27,9 +27,20 @@ const WalletItem = ({ wallet, queryKey }: Props) => {
             >
                 <HStack spacing={3}>
                     <Icon fontSize={"2xl"} color={"#62678F"} as={FaEthereum} />
-                    <Text color="gray.800" textTransform={"uppercase"}>
-                        {wallet.address}
-                    </Text>
+                    <Show above="md">
+                        <Text color="gray.800" textTransform={"uppercase"}>
+                            {wallet.address}
+                        </Text>
+                    </Show>
+                    <Show below="md">
+                        <Text color="gray.800" textTransform={"uppercase"}>
+                            {wallet.address.substring(0, 8)}...
+                            {wallet.address.substring(
+                                wallet.address.length - 8,
+                                wallet.address.length
+                            )}
+                        </Text>
+                    </Show>
                 </HStack>
                 <HStack spacing={5}>
                     <FavoriteButton wallet={wallet} queryKey={queryKey} />
