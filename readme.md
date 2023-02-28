@@ -18,4 +18,4 @@ npm run start
 
 # CI/CD
 
-You can find the API live at [https://securitize-client.onrender.com](https://securitize-client.onrender.com).
+You can find the API live at [https://securitize-client.onrender.com](https://securitize-client.onrender.com). Please note that the API of this project is hosted on a free tier and may take a minute to load.
