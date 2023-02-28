@@ -1,7 +1,8 @@
-import { Box, Center, VStack } from "@chakra-ui/react";
+import { Center, VStack } from "@chakra-ui/react";
 import { Route, Routes } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Wallets from "./pages/Wallets/Wallets";
+import ExchangeRates from "./pages/ExchangeRates/ExchangeRates";
 
 function App() {
     return (
@@ -10,6 +11,7 @@ function App() {
             <Center flex={1}>
                 <Routes>
                     <Route path="/" element={<Wallets />} />
+                    <Route path="/rates" element={<ExchangeRates />} />
                 </Routes>
             </Center>
         </VStack>
